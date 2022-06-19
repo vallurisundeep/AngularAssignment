@@ -1,0 +1,201 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  font-family: Montserrat !important;
+  background: #f2f2f2;
+}
+
+table.table {
+  table-layout: fixed;
+  margin-bottom: 0;
+  tr {
+    th:first-child,td:first-child{
+      border-left: none;
+    }
+    th:last-child,td:last-child{
+      border-right: none;
+    }
+    th:first-child {
+      width: 45%;
+    }
+    th,td{
+      padding: 10px 20px;
+    }
+    &:hover{
+      >*{
+        --bs-table-accent-bg:none;
+        background:none;
+      }
+    }
+  }
+  tbody{
+    tr{
+      td{
+        border-bottom: none;
+      }
+    }
+  }
+}
+
+.mat-accordion {
+  margin-bottom: 0px;
+  display: block;
+
+}
+
+.mat-expansion-panel {
+  margin-bottom:0px!important;
+  border-radius: 0!important;
+  box-shadow: none;
+  border-bottom: 1px solid #dedede;
+  h3 {
+    font-weight: 500;
+  }
+}
+
+
+.mat-expansion-indicator {
+  position: absolute;
+  width: 100%;
+  height: 46px;
+  left: 0;
+}
+
+.mat-expansion-indicator::after {
+  position: absolute;
+  right: 20px;
+  top: 18px;
+  width: 0;
+  height: 0;
+}
+
+.mat-expanded {
+  .mat-expansion-indicator::after {
+
+    left: 20px;
+    height: 0px;
+  }
+}
+
+
+
+#spinner {
+  -webkit-animation: frames 1s infinite linear;
+  animation: frames 1s infinite linear;
+  background: transparent;
+  border: 10px solid #FFF;
+  border-radius: 100%;
+  border-top-color: #0263e0;
+  width: 80px;
+  height: 80px;
+  opacity: .6;
+  padding: 0;
+  position: absolute;
+  z-index: 999;
+}
+
+@keyframes frames {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
+#pause {
+  display: block;
+  background:
+    rgba(0, 0, 0, 0.66) no-repeat 0 0;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.content-wrapper::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 5px;
+}
+
+.content-wrapper::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(32, 32, 32, 0.3);
+  border-radius: 5px;
+}
+
+.content-wrapper::-webkit-scrollbar-thumb {
+  background-color: #8506cf;
+
+  border-radius: 5px;
+}
+
+.mat-form-field-infix {
+  cursor: pointer !important;
+  width: 350px !important;
+
+  &:after {
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    content: "";
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(45deg);
+    vertical-align: middle;
+    position: absolute;
+    right: 10px;
+    top: 12px;
+    color: #555;
+  }
+}
+
+.mat-option {
+  &:hover {
+    background: #eae0ef !important;
+  }
+}
+
+.mat-expansion-panel .mat-expansion-panel-header.cdk-keyboard-focused:not([aria-disabled=true]),
+.mat-expansion-panel .mat-expansion-panel-header.cdk-program-focused:not([aria-disabled=true]),
+.mat-expansion-panel:not(.mat-expanded) .mat-expansion-panel-header:hover:not([aria-disabled=true]) {
+  background: #eae0ef !important;
+}
+
+.mat-input-element {
+  z-index: -1;
+  position: relative;
+}
+.mat-expansion-panel:not([class*=mat-elevation-z]){
+  box-shadow: none!important;
+}
+
+.mat-expansion-panel-body{
+  padding: 0!important;
+}
+.mat-expansion-panel-content{
+  margin-bottom: -1px;
+}
+h2.title-medium{
+  background: #4f4f4f;
+  color: #fff;
+  padding: 10px 20px;
+  margin: 0;
+}
+.mat-expansion-panel-header.mat-expanded{
+  height: 48px!important;
+  background: #e4e4e4!important;
+}
+.mat-expansion-panel-header{
+  padding: 0 20px;
+}

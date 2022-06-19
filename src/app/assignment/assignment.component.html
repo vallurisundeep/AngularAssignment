@@ -1,0 +1,68 @@
+<loading *ngIf="isLoading"></loading>
+<app-header></app-header>
+
+
+
+<div class="container mt-5">
+  <div class="row">
+
+
+    <div class="col-md-12">
+      <mat-form-field>
+        <input matInput placeholder="Select/Enter Country" aria-label="Select/Enter Country" [matAutocomplete]="auto">
+        <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selectedCountry($event)">
+          <mat-option *ngFor="let country of countries" [value]="country">
+            <span>{{country}}</span>
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+    </div>
+
+
+    <div class="col-md-12">
+
+
+
+      <h2 *ngIf="showHeader" class="title-medium">List of Universities</h2>
+      <div class="content-wrapper">
+
+        <mat-accordion *ngFor="let data of universityDetails; let i= index ">
+
+          <mat-expansion-panel *ngIf="i <= 100">
+            <mat-expansion-panel-header>
+              <div class="my-panel">
+                <h3> {{data['universityName']}}</h3>
+              </div>
+            </mat-expansion-panel-header>
+
+            <table class="table table-bordered table-hover">
+              <thead>
+                <tr>
+                  <th>School Website</th>
+                  <th>Country</th>
+                  <th>Country Code</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td> {{data['website']}}</td>
+                  <td> {{data['country']}}</td>
+                  <td> {{data['countryCode']}}</td>
+
+                </tr>
+              </tbody>
+            </table>
+
+          </mat-expansion-panel>
+
+        </mat-accordion>
+      </div>
+
+
+
+
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>
